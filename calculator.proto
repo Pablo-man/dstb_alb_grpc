@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+// Servicio Calculator con operaciones básicas
+service Calculator {
+    rpc Add (Numbers) returns (Result);
+    rpc Multiply (Numbers) returns (Result);
+}
+
+// Mensajes utilizados por el servicio
+message Numbers {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message Result {
+    int32 value = 1;
+}
